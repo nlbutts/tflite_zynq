@@ -51,7 +51,9 @@ tool_path { name: "ar" path: "/home/nlbutts/projects/buildroot/output/host/bin/a
 I then updated the *cxx_builtin_include_directory* and some of the compiler flags to force the floating point ABI to use *hard*.
 
 I did have to add the following line to the BUILD file in the *tensorflow/third_party/toolchains/cpus/arm/* directory. This seems like an issue that needs to be fixed.
+```
 licenses(["notice"])  # Apache 2.0
+```
 
 The last change I needed to make was to TFLITE's floating point ABI. In *tensorflow/tensorflow/contrib/lite/kernels/internal/BUILD* they override compiler flags based on the target CPU.
 
@@ -98,4 +100,4 @@ TFLite took 2855029us.
 Predictions: 653 0.797  military uniform
 ```
 
-As you can see it takes about 2.8 seconds to run the [MobileNet_v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md). Specifically I used the MobileNet_v1_1.0_224, which should take 569 million MACs per inference. The Zynq is running at 666 MHz. On an Intel i7-6700HQ, this inference takes ~150 ms.
+As you can see it takes about 2.8 seconds to run the [MobileNet_v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md). Specifically I used the MobileNet_v1_1.0_224, which should take 569 million MACs per inference. The Zynq is running at 666 MHz. On an Intel i7-6700HQ, this inference takes ~100 ms.

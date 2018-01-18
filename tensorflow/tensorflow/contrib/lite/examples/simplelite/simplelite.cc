@@ -267,7 +267,7 @@ int main(int argc, char * argv[])
 {
   if (argc != 4)
   {
-    std::cout << "usage: test graph.pb labels.txt image.jpg" << std::endl;
+    std::cout << "usage: test graph.lite labels.txt image.jpg" << std::endl;
     return -1;
   }
   std::cout << "Using graph " << argv[1];

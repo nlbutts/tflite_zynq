@@ -2,8 +2,8 @@
 Example code and instructions on getting Tensorflow Lite running on a Xilinx Zynq
 
 The first step is building a compiler for the Zynq and getting a Linux system up and running.
-[Xilinx]{http://www.wiki.xilinx.com/} has some good resources on how to do that. Although building
-a custom toolchain and development system with [Buildroot]{https://buildroot.org/} is also fairly straightforward.
+[Xilinx](http://www.wiki.xilinx.com/) has some good resources on how to do that. Although building
+a custom toolchain and development system with [Buildroot](https://buildroot.org/) is also fairly straightforward.
 
 # Buildroot
 
@@ -37,7 +37,7 @@ The **host** directory will contain your compiler, libraries, etc. **images** co
 
 This takes a bit of gynmastics to get working. I thought it should be straightforward, but I was unfamilar with Bazel and the intricacies.
 
-First checkout [Tensorflow]{https://github.com/tensorflow/tensorflow}.
+First checkout [Tensorflow](https://github.com/tensorflow/tensorflow).
 The easy method is to copy the tensorflow directory from this repo into your tensorflow repo. Otherwise follow along below
 
 I copied the iOS Simple example and created a command line stand alone program. It is located in the *tensorflow/tensorflow/contrib/lite/examples/simplelite* directory. It uses OpenCV to load and resize the image before feeding it into the TFLITE.
@@ -98,4 +98,4 @@ TFLite took 2855029us.
 Predictions: 653 0.797  military uniform
 ```
 
-As you can see it takes about 2.8 seconds to run the [MobileNet_v1]{https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md}. Specifically I used the MobileNet_v1_1.0_224, which should take 569 million MACs per inference. The Zynq is running at 666 MHz. On an Intel i7-6700HQ, this inference takes ~150 ms.
+As you can see it takes about 2.8 seconds to run the [MobileNet_v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md). Specifically I used the MobileNet_v1_1.0_224, which should take 569 million MACs per inference. The Zynq is running at 666 MHz. On an Intel i7-6700HQ, this inference takes ~150 ms.
